@@ -1,19 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Bootstrap starter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style-switcher.css">
 </head>
-<body>
 
-    <div class="container text-center">Lorem ipsum dolor sit amet.</div>
+<body class="dark">
+
+
+
+    <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+        <defs>
+            <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+                <stop offset="0%" stop-color="#27FDC7" />
+                <stop offset="100%" stop-color="#0FC0F5" />
+            </linearGradient>
+
+            <linearGradient id="lineGradient">
+                <stop offset="0%" stop-color="#0FC0F5" />
+                <stop offset="100%" stop-color="#27FDC7" />
+            </linearGradient>
+
+            <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
+            <path id="todo__box" stroke="url(#boxGradient)"
+                d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4">
+            </path>
+            <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
+            <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+        </defs>
+    </svg>
+
+    <div class="container">
+        <div class="mt-5 mb-5 p-3  w-50 mx-auto inner-shadow">
+
+            <div class="p-5 outer-shadow">
+                <form class="mb-5 js-form" autocomplete="off">
+
+                    <input type="text" class="js-input outer-shadow hover-inner-shadow" placeholder="to do" required>
+
+                </form>
+                <ul class="list-group mb-4 js-todos-list">
+
+                </ul>
+                <div class="d-flex count justify-content-between">
+                    <p><span class="all-count"></span> all</p>
+                    <p><span class="complated-count"></span> complated</p>
+                    <p><span class="uncomplated-count"></span> uncomplated</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <template id="todo-item">
+        <li class=" d-flex mb-3 js-todo-item justify-content-between align-items-center  outer-shadow ">
+            <label class="todo">
+                <input class="js-complated" type="checkbox">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25"
+                    class="todo__icon">
+                    <use xlink:href="#todo__line" class="todo__line"></use>
+                    <use xlink:href="#todo__box" class="todo__box"></use>
+                    <use xlink:href="#todo__check" class="todo__check"></use>
+                    <use xlink:href="#todo__circle" class="todo__circle"></use>
+                </svg>
+                <span class="js-todo-name">Home work</span>
+            </label>
+            <button class="btn js-delete-btn inner-shadow">&#10008;</button>
+        </li>
+    </template>
+    <div class="switch">
+
+        <div class="style-switcher">
+            <div class="day-night s-icon outer-shadow hover-in-shadow">
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
+
 </html>
