@@ -44,20 +44,20 @@ function renderTodo(todosArray) {
     todosList.innerHTML = "";
 
     /* Complated count */
-    let bajarilganlarSoni = 0;
-    let bajarilmaganlarSoni = 0;
+    let complatedCounts = 0;
+    let unComplatedCounts = 0;
 
     todosArray.forEach((todo) => {
         if (todo.is_complated === true) {
-            bajarilganlarSoni += 1;
+            complatedCounts += 1;
         } else {
-            bajarilmaganlarSoni += 1;
+            unComplatedCounts += 1;
         }
     });
 
     allCount.textContent = todosArray.length;
-    complatedCount.textContent = bajarilganlarSoni;
-    unComplatedCount.textContent = bajarilmaganlarSoni;
+    complatedCount.textContent = complatedCounts;
+    unComplatedCount.textContent = unComplatedCounts;
 
     todosArray.forEach((todo) => {
         let elTodo = todoItemTemplate.cloneNode(true);
@@ -66,10 +66,6 @@ function renderTodo(todosArray) {
         elTodo.querySelector(".js-delete-btn").dataset.id = todo.id;
         elTodo.querySelector(".js-complated").dataset.id = todo.id;
         elTodo.querySelector(".js-complated").checked = todo.is_complated;
-
-        // if (todo.is_complated === true) {
-        //     elTodo.querySelector(".js-todo-name").classList.add("line-through");
-        // }
 
         let deleteButton = elTodo.querySelector(".js-delete-btn");
         let complatedCheckbox = elTodo.querySelector(".js-complated");
@@ -87,9 +83,9 @@ function createTodo(e) {
 
     let todoInputValue = todoInput.value;
 
-    let uniqueId = allTodos[allTodos.length - 1] ?
-        allTodos[allTodos.length - 1].id :
-        1;
+    let uniqueId = allTodos[allTodos.length - 1]
+        ? allTodos[allTodos.length - 1].id
+        : 1;
 
     let newTodo = {
         id: uniqueId + 1,

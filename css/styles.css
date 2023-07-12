@@ -39,8 +39,6 @@ body.dark {
 }
 
 body {
-    /* width: auto; */
-    /* position: relative; */
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
@@ -138,22 +136,11 @@ body {
     color: var(--text-black-900);
 }
 
-
-/* .js-complated {
-    margin-right: 10px;
-    width: 30px;
-    cursor: pointer;
-} */
-
-
-/* .line-through {
-    text-decoration: line-through;
-} */
-
 .js-todo-name {
     text-transform: capitalize;
     font-size: 18px;
     letter-spacing: 1px;
+    transition: all 0.4s linear .4s;
 }
 
 
@@ -164,7 +151,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1;
-    /* width: 100%; */
     display: block;
     position: relative;
     padding-left: 30px;
@@ -177,10 +163,6 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
-}
-
-.js-todo-name {
-    transition: all 0.4s linear .4s;
 }
 
 .todo__icon {
@@ -215,21 +197,16 @@ body {
 }
 
 @keyframes sliden {
-    /* 0% {
-        stroke-width: 0;
-        transform: scale(0.5) rotate(0deg);
-    } */
     30% {
         stroke-width: 3;
         stroke-opacity: 1;
         transform: scale(0.8) rotate(40deg);
-        /* animation-timing-function: cubic-bezier(.89, .01, .95, .51); */
     }
+
     100% {
         stroke-width: 0;
         stroke-opacity: 0;
         transform: scale(1.1) rotate(60deg);
-        /* animation-timing-function: cubic-bezier(.08, .56, .04, .98); */
     }
 }
 
@@ -279,4 +256,39 @@ body {
 
 .js-complated:checked~.todo__icon .todo__circle {
     animation-name: sliden;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        max-width: 768px;
+    }
+
+    .js-todo-name {
+        width: 250px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        max-width: 576px;
+    }
+
+    .count {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .js-todo-name {
+        width: 250px;
+        font-size: 12px;
+    }
 }
