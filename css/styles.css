@@ -87,7 +87,8 @@ body {
     border: 1px solid transparent;
     border-radius: 15px;
     outline: none;
-    background-color: var(--bg-black-50);
+     background-color: transparent;
+    /* background-color: var(--bg-black-50); */
     color: var(--text-black-900);
     z-index: 99;
     transition: all .4ss ease;
