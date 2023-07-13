@@ -93,6 +93,16 @@ body {
     transition: all .4ss ease;
 }
 
+.btn-btn {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 12px 24px;
+    background-color: transparent;
+    display: none;
+    color: var(--text-black-900);
+}
+
 .js-input:focus,
 .js-input:active {
     outline: none;
@@ -271,6 +281,15 @@ body {
         width: 250px;
         font-size: 15px;
     }
+
+    .js-form {
+        display: flex;
+    }
+
+    .btn-btn {
+        display: block;
+        margin-left: 20px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -290,5 +309,15 @@ body {
     .js-todo-name {
         width: 250px;
         font-size: 12px;
+    }
+
+    .js-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-btn {
+        margin-top: 20px;
+        margin-left: 0;
     }
 }

@@ -1,6 +1,6 @@
 .style-switcher {
     position: fixed;
-    right: 20%;
+    right: 10%;
     top: 50px;
     z-index: 101;
     transition: all .3s ease;
